@@ -1,0 +1,12 @@
+# macOS metadata
+.DS_Store
+._*
+
+# Windows metadata
+Thumbs.db
+Desktop.ini
+
+# Editor and temporary files
+*.swp
+*.swo
+*~

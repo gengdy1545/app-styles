@@ -249,15 +249,37 @@ html, body, #root, .app-shell, .layout-content, .arco-layout {
   color: #DEC18B !important;
 }
 
-.message-item.user .message-bubble {
-  background: var(--message-user-bg) !important;
+/* 对话归属：用户为右侧鼠尾草气泡，助手为左侧炭灰面板。 */
+.message-item[data-message-type="text"][data-message-position="right"]
+  > div > div:has(> [data-testid="message-text-content"]) {
+  min-width: 72px;
+  max-width: min(78%, 760px) !important;
+  padding: 10px 14px !important;
+  background: #465448 !important;
+  color: #ECE8E1 !important;
+  border: 1px solid #66776A !important;
+  border-radius: 12px 4px 12px 12px !important;
+}
+.message-item[data-message-type="text"][data-message-position="left"]
+  > div > div:has(> [data-testid="message-text-content"]) {
+  width: 100%;
+  padding: 12px 16px !important;
+  background: rgba(50, 49, 47, 0.82) !important;
   color: var(--text-primary) !important;
-  border-color: #546257 !important;
+  border: 1px solid #45423E !important;
+  border-left: 3px solid #718475 !important;
+  border-radius: 4px 12px 12px 12px !important;
+}
+.message-item.user .message-bubble {
+  background: #465448 !important;
+  color: #ECE8E1 !important;
+  border-color: #66776A !important;
 }
 .message-item:not(.user) .message-bubble {
-  background-color: var(--mist-surface) !important;
+  background-color: rgba(50, 49, 47, 0.82) !important;
   color: var(--text-primary) !important;
   border-color: var(--border-base) !important;
+  border-left: 3px solid #718475 !important;
 }
 .markdown-body a, .arco-link { color: rgb(var(--link-7)) !important; }
 
