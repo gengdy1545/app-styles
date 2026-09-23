@@ -261,7 +261,9 @@ html, body, #root, .app-shell, .layout-content, .arco-layout {
 /* 对话归属：用户为右侧鼠尾草气泡，助手为左侧暖白面板。 */
 .message-item[data-message-type="text"][data-message-position="right"]
   > div > div:has(> [data-testid="message-text-content"]) {
+  box-sizing: border-box;
   min-width: 72px;
+  width: fit-content;
   max-width: min(78%, 760px) !important;
   padding: 10px 14px !important;
   background: #D7E1D8 !important;
@@ -271,7 +273,9 @@ html, body, #root, .app-shell, .layout-content, .arco-layout {
 }
 .message-item[data-message-type="text"][data-message-position="left"]
   > div > div:has(> [data-testid="message-text-content"]) {
+  box-sizing: border-box;
   width: 100%;
+  max-width: 100% !important;
   padding: 12px 16px !important;
   background: rgba(245, 242, 237, 0.72) !important;
   color: var(--text-primary) !important;
@@ -281,11 +285,15 @@ html, body, #root, .app-shell, .layout-content, .arco-layout {
 }
 /* 兼容旧版 AionUi 的气泡类名。 */
 .message-item.user .message-bubble {
+  box-sizing: border-box;
+  max-width: 100% !important;
   background: #D7E1D8 !important;
   color: var(--text-primary) !important;
   border-color: #BCCABD !important;
 }
 .message-item:not(.user) .message-bubble {
+  box-sizing: border-box;
+  max-width: 100% !important;
   background-color: rgba(245, 242, 237, 0.72) !important;
   color: var(--text-primary) !important;
   border-color: var(--border-base) !important;
@@ -363,10 +371,9 @@ html, body, #root, .app-shell, .layout-content, .arco-layout {
 }
 
 ::selection { background: #D1DDD2; color: var(--text-0); }
-::-webkit-scrollbar-thumb {
-  background-color: #B8BDB6 !important;
-  border-radius: 8px;
-  border: 2px solid var(--bg-base);
+/* 消息区不允许内容气泡触发横向滚动条。 */
+[data-testid="message-list-scroller"] {
+  overflow-x: hidden !important;
 }
-::-webkit-scrollbar-thumb:hover { background-color: #9CA69E !important; }
-::-webkit-scrollbar-track { background-color: transparent !important; }
+
+/* 滚动条完全交还 AionUi：默认透明，鼠标进入滚动区域后才显示。 */
