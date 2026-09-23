@@ -289,10 +289,43 @@ html, body, #root, .app-shell, .layout-content, .arco-layout {
   border-color: #514E49 !important;
   box-shadow: none !important;
 }
-.sendbox-panel:focus-within, .guidInputCard:focus-within,
-[class*="_guidInputCard_"]:focus-within {
+
+/* 首页欢迎输入框：移除组件 inline activeShadow，保留克制的鼠尾草焦点边。 */
+.guid-input-card-shell,
+[class*="_guidInputCardWrap_"],
+[class*="_guidInputInner_"] {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.guid-input-card-shell,
+[class*="_guidInputCardWrap_"] {
+  background: #302F2D !important;
+}
+[class*="_guidInputInner_"] {
+  background: var(--mist-raised) !important;
+  border-color: #4B4844 !important;
+}
+.guid-input-card-shell:focus-within,
+[class*="_guidInputCardWrap_"]:focus-within {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.guid-input-card-shell:focus-within [class*="_guidInputInner_"],
+[class*="_guidInputCardWrap_"]:focus-within [class*="_guidInputInner_"],
+[class*="_guidInputInner_"]:focus-within {
+  outline: none !important;
+  border-color: #829486 !important;
+  box-shadow: inset 0 0 0 1px rgba(155, 174, 157, 0.12) !important;
+}
+.guid-input-card-shell--dragging,
+.guid-input-card-shell--dragging [class*="_guidInputInner_"] {
+  border-color: #9BAE9D !important;
+  box-shadow: inset 0 0 0 1px rgba(155, 174, 157, 0.16) !important;
+}
+.sendbox-panel:focus-within,
+.guidInputCard:focus-within {
   border-color: var(--brand) !important;
-  box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.16) !important;
+  box-shadow: 0 0 0 1px rgba(var(--primary-rgb), 0.12) !important;
 }
 .sendbox-panel--dragging { border-color: var(--brand) !important; }
 .arco-input, .arco-textarea { caret-color: var(--brand) !important; }

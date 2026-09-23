@@ -8,6 +8,22 @@
 
 ![AionUi 莫兰迪暖白主题预览](light/preview.png)
 
+Settings 页面：
+
+![AionUi 莫兰迪暖白 Settings 页面预览](light/preview-settings.png)
+
+输入框聚焦效果：
+
+![AionUi 莫兰迪暖白输入框聚焦效果](light/preview-input-focus.png)
+
 ### Dark · 莫兰迪暖黑
 
 ![AionUi 莫兰迪暖黑主题预览](dark/preview.png)
+
+Settings 页面：
+
+![AionUi 莫兰迪暖黑 Settings 页面预览](dark/preview-settings.png)
+
+输入框聚焦效果：
+
+![AionUi 莫兰迪暖黑输入框聚焦效果](dark/preview-input-focus.png)
