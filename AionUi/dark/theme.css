@@ -218,11 +218,19 @@ html, body, #root, .app-shell, .layout-content, .arco-layout {
   background-color: #3C463E !important;
   border-color: var(--brand) !important;
 }
-[data-testid="input-search-agents"] .arco-input-inner-wrapper,
-[data-testid="input-search-agents"].arco-input-wrapper,
+/* Agents 搜索：胶囊与页面同色，只加 --color-border-3。background 简写用来清掉默认渐变。 */
+div:has(> [data-testid="input-search-agents"]) {
+  background: var(--mist-canvas) !important;
+  border-color: var(--color-border-3) !important;
+  box-shadow: none !important;
+}
+div:has(> [data-testid="input-search-agents"]):focus-within {
+  border-color: var(--brand) !important;
+  box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1) !important;
+}
 [data-testid="input-search-agents"] {
-  background-color: #32312F !important;
-  border-color: #4B4844 !important;
+  background: transparent !important;
+  border: none !important;
   box-shadow: none !important;
 }
 .settings-sider { background-color: var(--mist-sidebar) !important; }
